@@ -2,6 +2,20 @@
 
 A modern, metadata-driven React application for managing and monitoring Head End Systems, built with React, TypeScript, and Tailwind CSS.
 
+## 🚀 Live Demo
+
+**Live Application:** [https://hes-pi.vercel.app/](https://hes-pi.vercel.app/)
+
+**GitHub Repository:** [https://github.com/selvaduraib/hes](https://github.com/selvaduraib/hes)
+
+### Demo Features
+- 📊 **Dashboard** - Real-time monitoring
+- 📈 **Interactive Charts** - Bar charts, pie charts with modern styling
+- 🔍 **Meter Management** - Search, filter, and export meter data
+- 🌓 **Dark Mode** - Full theme support
+- 🌍 **Multi-language** - English & Spanish
+- 📱 **Responsive Design** - Works on all devices
+
 ## Features
 
 ### ✅ Metadata-Driven Architecture
@@ -47,6 +61,23 @@ HES/
 │   │       └── DynamicChart.tsx    # Metadata-driven charts
 │   ├── contexts/
 │   │   └── ThemeContext.tsx        # Theme management
+│   ├── config/
+│   │   ├── api.ts                  # API configuration
+│   │   ├── constants.ts            # Application constants
+│   │   ├── env.ts                  # Environment variables
+│   │   └── index.ts                # Config exports
+│   ├── data/
+│   │   ├── README.md               # Data folder documentation
+│   │   ├── topBar.json             # Top bar configuration
+│   │   ├── sidebar.json            # Sidebar menu configuration
+│   │   ├── meters.json             # Meter data
+│   │   ├── dashboard.json          # Dashboard statistics
+│   │   ├── communicationHistory.json  # Communication logs
+│   │   ├── communicationStats.json    # Communication statistics
+│   │   ├── scheduleData.json       # Schedule data
+│   │   └── featureFlags.json       # Feature flags
+│   ├── hooks/
+│   │   └── useLocalStorage.ts      # Local storage hook
 │   ├── i18n/
 │   │   ├── config.ts               # i18n configuration
 │   │   └── locales/
@@ -55,20 +86,34 @@ HES/
 │   ├── pages/
 │   │   ├── Dashboard.tsx           # Dashboard page
 │   │   ├── Meters.tsx              # Meters management
+│   │   ├── LocateMeters.tsx        # Locate meters page
+│   │   ├── ScheduleData.tsx        # Schedule data page
+│   │   ├── CommunicationHistory.tsx   # Communication history
+│   │   ├── CommunicationOverview.tsx  # Communication overview
+│   │   ├── Reports.tsx             # Reports page
 │   │   └── Settings.tsx            # Settings page
+│   ├── services/
+│   │   └── api.ts                  # API service layer
 │   ├── types/
 │   │   └── metadata.ts             # TypeScript type definitions
-│   ├── config/
-│   │   └── appMetadata.ts          # Application metadata config
+│   ├── utils/
+│   │   ├── exporters.ts            # Export utilities (CSV, Excel)
+│   │   └── formatters.ts           # Data formatters
 │   ├── App.tsx                     # Main app component
 │   ├── main.tsx                    # Entry point
 │   └── index.css                   # Global styles
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-├── tailwind.config.js
-└── postcss.config.js
+├── DEPLOYMENT.md                   # Deployment guide
+├── DEVELOPMENT_GUIDE.md            # Development guide
+├── PROJECT_SUMMARY.md              # Project summary
+├── VERCEL_DEPLOY_QUICK_START.md    # Quick deploy guide
+├── index.html                      # HTML entry point
+├── package.json                    # Dependencies
+├── tsconfig.json                   # TypeScript config
+├── vite.config.ts                  # Vite config
+├── tailwind.config.js              # Tailwind CSS config
+├── postcss.config.js               # PostCSS config
+├── vercel.json                     # Vercel deployment config
+└── .vercelignore                   # Vercel ignore file
 ```
 
 ## Getting Started
