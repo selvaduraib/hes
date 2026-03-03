@@ -1,0 +1,174 @@
+{
+  "app": {
+    "name": "Sistema de Cabecera",
+    "title": "Panel HES"
+  },
+  "nav": {
+    "dashboard": "Tablero",
+    "communication": "Resumen de Comunicación",
+    "meters": "Medidores",
+    "reports": "Informes",
+    "settings": "Configuración"
+  },
+  "dashboard": {
+    "title": "Tablero",
+    "subtitle": "Resumen de Comunicación y Estado del Sistema",
+    "totalMeters": "Medidores Totales",
+    "totalMetersInfo": "Total de medidores registrados",
+    "communicating": "Comunicando",
+    "nonCommunicating": "No Comunicando",
+    "communicationHistory": "Historial de Comunicación",
+    "meterStatusDistribution": "Distribución de Estado de Medidores",
+    "recentEvents": "Eventos de Comunicación Recientes",
+    "locateMeters": "Localizar Medidores",
+    "timestamp": "Marca de Tiempo",
+    "meterNo": "Número de Medidor",
+    "event": "Evento",
+    "status": "Estado",
+    "duration": "Duración"
+  },
+  "communication": {
+    "overview": {
+      "title": "Resumen de Comunicación",
+      "subtitle": "Monitorear estado y estadísticas de comunicación",
+      "totalMeters": "Medidores Totales",
+      "communicating": "Comunicando",
+      "nonCommunicating": "No Comunicando",
+      "activeSessions": "Sesiones Activas",
+      "successRate": "tasa de éxito",
+      "failureRate": "tasa de fallo",
+      "communicationStatus": "Estado de Comunicación",
+      "successfulCommunications": "Comunicaciones Exitosas",
+      "failedCommunications": "Comunicaciones Fallidas",
+      "recentActivity": "Actividad de Comunicación Reciente"
+    },
+    "history": {
+      "title": "Historial de Comunicación",
+      "subtitle": "Ver eventos y registros históricos de comunicación"
+    }
+  },
+  "meters": {
+    "all": {
+      "title": "Todos los Medidores",
+      "subtitle": "Gestionar y monitorear todos los medidores registrados"
+    },
+    "locate": {
+      "title": "Localizar Medidores",
+      "subtitle": "Encontrar y localizar medidores en el mapa",
+      "searchPlaceholder": "Buscar por número de medidor, ubicación o dirección...",
+      "mapView": "Vista de Mapa",
+      "mapPlaceholder": "El mapa interactivo se mostrará aquí",
+      "nearbyMeters": "Medidores Cercanos"
+    },
+    "columns": {
+      "meterId": "ID de Medidor",
+      "location": "Ubicación",
+      "status": "Estado",
+      "lastRead": "Última Lectura",
+      "consumption": "Consumo (kWh)",
+      "signal": "Señal"
+    }
+  },
+  "scheduleData": {
+    "title": "Datos de Programación",
+    "subtitle": "Ver y gestionar datos de programación de medidores",
+    "meterNo": "Número de Medidor",
+    "msnPlaceholder": "MSN",
+    "fromDate": "Fecha Desde",
+    "toDate": "Fecha Hasta",
+    "columns": {
+      "msn": "MSN",
+      "hesTimestamp": "Marca de Tiempo HES",
+      "realTimeClock": "Reloj de Tiempo Real Fecha y Hora[0.0.1.0.0.255]",
+      "cumActiveImportEnergy": "Energía de Importación Activa Acumulada KWh[1.0.1.8.0]"
+    }
+  },
+  "reports": {
+    "title": "Informes",
+    "subtitle": "Generar y descargar informes del sistema",
+    "recentReports": "Informes Recientes",
+    "generate": "Generar",
+    "download": "Descargar",
+    "types": {
+      "communication": {
+        "title": "Informe de Comunicación",
+        "description": "Estadísticas detalladas y registros de comunicación"
+      },
+      "meterStatus": {
+        "title": "Informe de Estado de Medidores",
+        "description": "Estado actual de todos los medidores en el sistema"
+      },
+      "energyConsumption": {
+        "title": "Informe de Consumo de Energía",
+        "description": "Análisis de uso y consumo de energía"
+      },
+      "billing": {
+        "title": "Informe de Facturación",
+        "description": "Datos de facturación e información de ingresos"
+      },
+      "eventLog": {
+        "title": "Informe de Registro de Eventos",
+        "description": "Historial de eventos y alertas del sistema"
+      },
+      "custom": {
+        "title": "Informe Personalizado",
+        "description": "Crear un informe personalizado con parámetros seleccionados"
+      }
+    }
+  },
+  "settings": {
+    "title": "Configuración",
+    "subtitle": "Configurar ajustes y preferencias de la aplicación",
+    "formTitle": "Configuración de la Aplicación",
+    "saveSuccess": "¡Configuración guardada exitosamente!",
+    "fields": {
+      "companyName": "Nombre de la Empresa",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "admin@ejemplo.com",
+      "timezone": "Zona Horaria",
+      "language": "Idioma Predeterminado",
+      "refreshInterval": "Intervalo de Actualización de Datos (segundos)",
+      "enableNotifications": "Habilitar Notificaciones",
+      "enableAutoBackup": "Habilitar Respaldo Automático",
+      "notificationType": "Tipo de Notificación",
+      "description": "Descripción",
+      "descriptionPlaceholder": "Ingrese la descripción del sistema..."
+    },
+    "options": {
+      "email": "Correo Electrónico",
+      "sms": "SMS",
+      "both": "Ambos",
+      "english": "Inglés",
+      "spanish": "Español"
+    }
+  },
+  "common": {
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "loading": "Cargando...",
+    "noData": "No hay datos disponibles",
+    "clear": "Limpiar",
+    "refresh": "Actualizar",
+    "download": "Descargar",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "reset": "Restablecer",
+    "show": "Mostrar",
+    "showing": "Mostrando",
+    "to": "a",
+    "of": "de",
+    "entries": "entradas",
+    "searchPlaceholder": "Buscar...",
+    "toggleMenu": "Alternar Menú",
+    "required": "es requerido",
+    "saveSettings": "Guardar Configuración"
+  }
+}
+

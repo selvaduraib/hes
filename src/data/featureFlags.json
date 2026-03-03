@@ -1,0 +1,10 @@
+{
+  "darkMode": true,
+  "exportPDF": false,
+  "realTimeUpdates": false,
+  "advancedFilters": true,
+  "bulkOperations": false,
+  "notifications": true,
+  "websocket": false
+}
+

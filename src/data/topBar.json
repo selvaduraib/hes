@@ -1,0 +1,40 @@
+{
+  "appName": "Head End System",
+  "logo": {
+    "text": "HES",
+    "backgroundColor": "#3b82f6"
+  },
+  "user": {
+    "name": "John Smith",
+    "role": "Administrator",
+    "avatar": null
+  },
+  "notifications": {
+    "enabled": true,
+    "count": 3,
+    "showBadge": true
+  },
+  "actions": [
+    {
+      "id": "language",
+      "type": "language-toggle",
+      "enabled": true,
+      "icon": "Globe",
+      "title": "Change Language"
+    },
+    {
+      "id": "theme",
+      "type": "theme-toggle",
+      "enabled": true,
+      "title": "Toggle Theme"
+    },
+    {
+      "id": "notifications",
+      "type": "notifications",
+      "enabled": true,
+      "icon": "Bell",
+      "title": "Notifications"
+    }
+  ]
+}
+

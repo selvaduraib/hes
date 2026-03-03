@@ -1,0 +1,9 @@
+{
+  "totalMeters": 1234,
+  "communicating": 1156,
+  "nonCommunicating": 78,
+  "activeSessions": 42,
+  "successRate": 93.7,
+  "failureRate": 6.3
+}
+

@@ -1,0 +1,55 @@
+/**
+ * useMeters Hook
+ * Custom hook for fetching and managing meters data
+ */
+
+import { useState, useEffect, useCallback } from 'react';
+import { meterService, Meter } from '@/services/meterService';
+import { handleApiError } from '@/services/api';
+
+/**
+ * Hook return type
+ */
+interface UseMetersReturn {
+  meters: Meter[];
+  loading: boolean;
+  error: string | null;
+  refetch: () => Promise<void>;
+}
+
+/**
+ * useMeters Hook
+ * Fetches meters data with loading and error states
+ */
+export const useMeters = (): UseMetersReturn => {
+  const [meters, setMeters] = useState<Meter[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchMeters = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await meterService.getAll();
+      setMeters(data);
+    } catch (err) {
+      const errorMessage = handleApiError(err);
+      setError(errorMessage);
+      console.error('Error fetching meters:', err);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchMeters();
+  }, [fetchMeters]);
+
+  return {
+    meters,
+    loading,
+    error,
+    refetch: fetchMeters,
+  };
+};
+

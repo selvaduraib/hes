@@ -1,0 +1,38 @@
+{
+  "communicationData": [
+    {
+      "month": "Jan",
+      "communicating": 2800000,
+      "nonCommunicating": 300000
+    },
+    {
+      "month": "Feb",
+      "communicating": 2900000,
+      "nonCommunicating": 280000
+    },
+    {
+      "month": "Mar",
+      "communicating": 3033013,
+      "nonCommunicating": 357992
+    }
+  ],
+  "meterStatusData": [
+    {
+      "name": "Communicating",
+      "value": 3033013,
+      "color": "#10b981"
+    },
+    {
+      "name": "Non Communicating",
+      "value": 357992,
+      "color": "#ef4444"
+    }
+  ],
+  "stats": {
+    "totalMeters": 3391005,
+    "communicating": 3033013,
+    "nonCommunicating": 357992,
+    "communicationRate": 89.44
+  }
+}
+

@@ -1,0 +1,61 @@
+[
+  {
+    "id": "dashboard",
+    "label": "Dashboard",
+    "icon": "LayoutDashboard",
+    "path": "/"
+  },
+  {
+    "id": "communication",
+    "label": "Communication",
+    "icon": "Radio",
+    "children": [
+      {
+        "id": "overview",
+        "label": "Overview",
+        "path": "/communication/overview"
+      },
+      {
+        "id": "history",
+        "label": "History",
+        "path": "/communication/history"
+      }
+    ]
+  },
+  {
+    "id": "meters",
+    "label": "Meters",
+    "icon": "Gauge",
+    "children": [
+      {
+        "id": "all-meters",
+        "label": "All Meters",
+        "path": "/meters/all"
+      },
+      {
+        "id": "locate",
+        "label": "Locate Meters",
+        "path": "/meters/locate"
+      }
+    ]
+  },
+  {
+    "id": "schedule-data",
+    "label": "Schedule Data",
+    "icon": "Calendar",
+    "path": "/schedule-data"
+  },
+  {
+    "id": "reports",
+    "label": "Reports",
+    "icon": "FileText",
+    "path": "/reports"
+  },
+  {
+    "id": "settings",
+    "label": "Settings",
+    "icon": "Settings",
+    "path": "/settings"
+  }
+]
+

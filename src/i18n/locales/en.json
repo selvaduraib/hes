@@ -1,0 +1,174 @@
+{
+  "app": {
+    "name": "Head End System",
+    "title": "HES Dashboard"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "communication": "Communication Overview",
+    "meters": "Meters",
+    "reports": "Reports",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Communication Overview and System Status",
+    "totalMeters": "Total Meters",
+    "totalMetersInfo": "Total registered meters",
+    "communicating": "Communicating",
+    "nonCommunicating": "Non Communicating",
+    "communicationHistory": "Communication History",
+    "meterStatusDistribution": "Meter Status Distribution",
+    "recentEvents": "Recent Communication Events",
+    "locateMeters": "Locate Meters",
+    "timestamp": "Timestamp",
+    "meterNo": "Meter No",
+    "event": "Event",
+    "status": "Status",
+    "duration": "Duration"
+  },
+  "communication": {
+    "overview": {
+      "title": "Communication Overview",
+      "subtitle": "Monitor communication status and statistics",
+      "totalMeters": "Total Meters",
+      "communicating": "Communicating",
+      "nonCommunicating": "Non-Communicating",
+      "activeSessions": "Active Sessions",
+      "successRate": "success rate",
+      "failureRate": "failure rate",
+      "communicationStatus": "Communication Status",
+      "successfulCommunications": "Successful Communications",
+      "failedCommunications": "Failed Communications",
+      "recentActivity": "Recent Communication Activity"
+    },
+    "history": {
+      "title": "Communication History",
+      "subtitle": "View historical communication events and logs"
+    }
+  },
+  "meters": {
+    "all": {
+      "title": "All Meters",
+      "subtitle": "Manage and monitor all registered meters"
+    },
+    "locate": {
+      "title": "Locate Meters",
+      "subtitle": "Find and locate meters on the map",
+      "searchPlaceholder": "Search by meter number, location, or address...",
+      "mapView": "Map View",
+      "mapPlaceholder": "Interactive map will be displayed here",
+      "nearbyMeters": "Nearby Meters"
+    },
+    "columns": {
+      "meterId": "Meter ID",
+      "location": "Location",
+      "status": "Status",
+      "lastRead": "Last Read",
+      "consumption": "Consumption (kWh)",
+      "signal": "Signal"
+    }
+  },
+  "scheduleData": {
+    "title": "Schedule Data",
+    "subtitle": "View and manage meter schedule data",
+    "meterNo": "Meter No",
+    "msnPlaceholder": "MSN",
+    "fromDate": "From Date",
+    "toDate": "To Date",
+    "columns": {
+      "msn": "MSN",
+      "hesTimestamp": "HES Timestamp",
+      "realTimeClock": "Real Time Clock Date And Time[0.0.1.0.0.255]",
+      "cumActiveImportEnergy": "Cum Active Import Energy KWh[1.0.1.8.0]"
+    }
+  },
+  "reports": {
+    "title": "Reports",
+    "subtitle": "Generate and download system reports",
+    "recentReports": "Recent Reports",
+    "generate": "Generate",
+    "download": "Download",
+    "types": {
+      "communication": {
+        "title": "Communication Report",
+        "description": "Detailed communication statistics and logs"
+      },
+      "meterStatus": {
+        "title": "Meter Status Report",
+        "description": "Current status of all meters in the system"
+      },
+      "energyConsumption": {
+        "title": "Energy Consumption Report",
+        "description": "Energy usage and consumption analysis"
+      },
+      "billing": {
+        "title": "Billing Report",
+        "description": "Billing data and revenue information"
+      },
+      "eventLog": {
+        "title": "Event Log Report",
+        "description": "System events and alerts history"
+      },
+      "custom": {
+        "title": "Custom Report",
+        "description": "Create a custom report with selected parameters"
+      }
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Configure application settings and preferences",
+    "formTitle": "Application Settings",
+    "saveSuccess": "Settings saved successfully!",
+    "fields": {
+      "companyName": "Company Name",
+      "email": "Email",
+      "emailPlaceholder": "admin@example.com",
+      "timezone": "Timezone",
+      "language": "Default Language",
+      "refreshInterval": "Data Refresh Interval (seconds)",
+      "enableNotifications": "Enable Notifications",
+      "enableAutoBackup": "Enable Auto Backup",
+      "notificationType": "Notification Type",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter system description..."
+    },
+    "options": {
+      "email": "Email",
+      "sms": "SMS",
+      "both": "Both",
+      "english": "English",
+      "spanish": "Spanish"
+    }
+  },
+  "common": {
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "loading": "Loading...",
+    "noData": "No data available",
+    "clear": "Clear",
+    "refresh": "Refresh",
+    "download": "Download",
+    "previous": "Previous",
+    "next": "Next",
+    "submit": "Submit",
+    "reset": "Reset",
+    "show": "Show",
+    "showing": "Showing",
+    "to": "to",
+    "of": "of",
+    "entries": "entries",
+    "searchPlaceholder": "Search...",
+    "toggleMenu": "Toggle Menu",
+    "required": "is required",
+    "saveSettings": "Save Settings"
+  }
+}
+

@@ -1,0 +1,63 @@
+/**
+ * Schedule Data Service
+ * API service for schedule data operations
+ */
+
+import { apiClient } from './api';
+import { API_CONFIG } from '@/config/api';
+
+/**
+ * Schedule Data Interface
+ */
+export interface ScheduleData {
+  id: string;
+  meterId: string;
+  location: string;
+  scheduledDate: string;
+  scheduledTime: string;
+  status: string;
+  type: string;
+  priority?: string;
+  notes?: string;
+}
+
+/**
+ * Schedule Data Service
+ */
+export const scheduleDataService = {
+  /**
+   * Get all schedule data
+   */
+  getAll: async (): Promise<ScheduleData[]> => {
+    return apiClient.get(API_CONFIG.endpoints.scheduleData.list);
+  },
+  
+  /**
+   * Get schedule data by ID
+   */
+  getById: async (id: string): Promise<ScheduleData> => {
+    return apiClient.get(API_CONFIG.endpoints.scheduleData.byId(id));
+  },
+  
+  /**
+   * Create new schedule data
+   */
+  create: async (data: Omit<ScheduleData, 'id'>): Promise<ScheduleData> => {
+    return apiClient.post(API_CONFIG.endpoints.scheduleData.create, data);
+  },
+  
+  /**
+   * Update schedule data
+   */
+  update: async (id: string, data: Partial<ScheduleData>): Promise<ScheduleData> => {
+    return apiClient.put(API_CONFIG.endpoints.scheduleData.update(id), data);
+  },
+  
+  /**
+   * Delete schedule data
+   */
+  delete: async (id: string): Promise<void> => {
+    return apiClient.delete(API_CONFIG.endpoints.scheduleData.delete(id));
+  },
+};
+

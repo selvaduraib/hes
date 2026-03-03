@@ -1,0 +1,68 @@
+/**
+ * Report Service
+ * API service for report-related operations
+ */
+
+import { apiClient } from './api';
+import { API_CONFIG } from '@/config/api';
+
+/**
+ * Report Interface
+ */
+export interface Report {
+  id: string;
+  name: string;
+  type: string;
+  createdDate: string;
+  createdBy: string;
+  status: string;
+  fileUrl?: string;
+}
+
+/**
+ * Report Generation Parameters
+ */
+export interface ReportGenerationParams {
+  type: string;
+  startDate?: string;
+  endDate?: string;
+  meterIds?: string[];
+  format?: 'pdf' | 'excel' | 'csv';
+}
+
+/**
+ * Report Service
+ */
+export const reportService = {
+  /**
+   * Get all reports
+   */
+  getAll: async (): Promise<Report[]> => {
+    return apiClient.get(API_CONFIG.endpoints.reports.list);
+  },
+  
+  /**
+   * Get report by ID
+   */
+  getById: async (id: string): Promise<Report> => {
+    return apiClient.get(API_CONFIG.endpoints.reports.byId(id));
+  },
+  
+  /**
+   * Generate new report
+   */
+  generate: async (params: ReportGenerationParams): Promise<Report> => {
+    return apiClient.post(API_CONFIG.endpoints.reports.generate, params);
+  },
+  
+  /**
+   * Export report
+   */
+  export: async (id: string, format: 'pdf' | 'excel' | 'csv' = 'pdf'): Promise<Blob> => {
+    return apiClient.get(API_CONFIG.endpoints.reports.export, {
+      params: { id, format },
+      responseType: 'blob',
+    });
+  },
+};
+

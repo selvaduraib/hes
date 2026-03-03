@@ -1,0 +1,78 @@
+/**
+ * Communication Service
+ * API service for communication-related operations
+ */
+
+import { apiClient } from './api';
+import { API_CONFIG } from '@/config/api';
+
+/**
+ * Communication Event Interface
+ */
+export interface CommunicationEvent {
+  id: string;
+  meterId: string;
+  timestamp: string;
+  status: string;
+  type: string;
+  duration?: number;
+  errorMessage?: string;
+  dataSize?: number;
+}
+
+/**
+ * Communication Overview Interface
+ */
+export interface CommunicationOverview {
+  totalMeters: number;
+  communicating: number;
+  nonCommunicating: number;
+  offline: number;
+  successRate: number;
+  lastUpdated: string;
+}
+
+/**
+ * Communication Stats Interface
+ */
+export interface CommunicationStats {
+  successful: number;
+  failed: number;
+  pending: number;
+  timeout: number;
+  averageDuration: number;
+}
+
+/**
+ * Communication Service
+ */
+export const communicationService = {
+  /**
+   * Get communication overview
+   */
+  getOverview: async (): Promise<CommunicationOverview> => {
+    return apiClient.get(API_CONFIG.endpoints.communication.overview);
+  },
+  
+  /**
+   * Get communication history
+   */
+  getHistory: async (): Promise<CommunicationEvent[]> => {
+    return apiClient.get(API_CONFIG.endpoints.communication.history);
+  },
+  
+  /**
+   * Get communication events by meter ID
+   */
+  getByMeterId: async (meterId: string): Promise<CommunicationEvent[]> => {
+    return apiClient.get(API_CONFIG.endpoints.communication.byMeterId(meterId));
+  },
+  
+  /**
+   * Get communication statistics
+   */
+  getStats: async (): Promise<CommunicationStats> => {
+    return apiClient.get(API_CONFIG.endpoints.communication.stats);
+  },
+};
+

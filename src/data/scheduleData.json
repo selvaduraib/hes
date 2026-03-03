@@ -1,0 +1,63 @@
+[
+  {
+    "msn": "M22410039131",
+    "hesTimestamp": "2026-03-01 00:05:36",
+    "realTimeClock": "2026-03-01 00:00:00",
+    "cumActiveImportEnergy": 501.87
+  },
+  {
+    "msn": "M12511333446",
+    "hesTimestamp": "2026-03-01 00:05:26",
+    "realTimeClock": "2026-03-01 00:00:00",
+    "cumActiveImportEnergy": 2.48
+  },
+  {
+    "msn": "M22410038294",
+    "hesTimestamp": "2026-03-01 00:05:36",
+    "realTimeClock": "2026-03-01 00:00:00",
+    "cumActiveImportEnergy": 735.1
+  },
+  {
+    "msn": "M22410016727",
+    "hesTimestamp": "2026-03-01 00:05:36",
+    "realTimeClock": "2026-03-01 00:00:00",
+    "cumActiveImportEnergy": 1097.72
+  },
+  {
+    "msn": "M22410038418",
+    "hesTimestamp": "2026-03-01 00:05:36",
+    "realTimeClock": "2026-03-01 00:00:00",
+    "cumActiveImportEnergy": 71.83
+  },
+  {
+    "msn": "M22410017719",
+    "hesTimestamp": "2026-03-01 00:05:36",
+    "realTimeClock": "2026-03-01 00:00:00",
+    "cumActiveImportEnergy": 2297.53
+  },
+  {
+    "msn": "M22410016913",
+    "hesTimestamp": "2026-03-01 00:05:36",
+    "realTimeClock": "2026-03-01 00:00:00",
+    "cumActiveImportEnergy": 337.8
+  },
+  {
+    "msn": "M22410039132",
+    "hesTimestamp": "2026-03-01 00:10:15",
+    "realTimeClock": "2026-03-01 00:05:00",
+    "cumActiveImportEnergy": 502.15
+  },
+  {
+    "msn": "M12511333447",
+    "hesTimestamp": "2026-03-01 00:10:05",
+    "realTimeClock": "2026-03-01 00:05:00",
+    "cumActiveImportEnergy": 2.52
+  },
+  {
+    "msn": "M22410038295",
+    "hesTimestamp": "2026-03-01 00:10:15",
+    "realTimeClock": "2026-03-01 00:05:00",
+    "cumActiveImportEnergy": 735.45
+  }
+]
+

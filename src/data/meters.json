@@ -1,0 +1,143 @@
+[
+  {
+    "meterId": "MTR-000001",
+    "location": "Location 1, Building 1",
+    "status": "Communicating",
+    "lastRead": "2/28/2026",
+    "consumption": 456
+  },
+  {
+    "meterId": "MTR-000002",
+    "location": "Location 1, Building 2",
+    "status": "Communicating",
+    "lastRead": "2/27/2026",
+    "consumption": 789
+  },
+  {
+    "meterId": "MTR-000003",
+    "location": "Location 1, Building 3",
+    "status": "Communicating",
+    "lastRead": "2/26/2026",
+    "consumption": 234
+  },
+  {
+    "meterId": "MTR-000004",
+    "location": "Location 1, Building 4",
+    "status": "Communicating",
+    "lastRead": "2/25/2026",
+    "consumption": 567
+  },
+  {
+    "meterId": "MTR-000005",
+    "location": "Location 1, Building 5",
+    "status": "Communicating",
+    "lastRead": "2/24/2026",
+    "consumption": 890
+  },
+  {
+    "meterId": "MTR-000006",
+    "location": "Location 1, Building 6",
+    "status": "Non Communicating",
+    "lastRead": "2/23/2026",
+    "consumption": 123
+  },
+  {
+    "meterId": "MTR-000007",
+    "location": "Location 1, Building 7",
+    "status": "Communicating",
+    "lastRead": "2/22/2026",
+    "consumption": 678
+  },
+  {
+    "meterId": "MTR-000008",
+    "location": "Location 1, Building 8",
+    "status": "Communicating",
+    "lastRead": "2/28/2026",
+    "consumption": 345
+  },
+  {
+    "meterId": "MTR-000009",
+    "location": "Location 1, Building 9",
+    "status": "Communicating",
+    "lastRead": "2/27/2026",
+    "consumption": 901
+  },
+  {
+    "meterId": "MTR-000010",
+    "location": "Location 1, Building 10",
+    "status": "Communicating",
+    "lastRead": "2/26/2026",
+    "consumption": 234
+  },
+  {
+    "meterId": "MTR-000011",
+    "location": "Location 2, Building 1",
+    "status": "Non Communicating",
+    "lastRead": "2/25/2026",
+    "consumption": 567
+  },
+  {
+    "meterId": "MTR-000012",
+    "location": "Location 2, Building 2",
+    "status": "Communicating",
+    "lastRead": "2/24/2026",
+    "consumption": 890
+  },
+  {
+    "meterId": "MTR-000013",
+    "location": "Location 2, Building 3",
+    "status": "Communicating",
+    "lastRead": "2/23/2026",
+    "consumption": 123
+  },
+  {
+    "meterId": "MTR-000014",
+    "location": "Location 2, Building 4",
+    "status": "Communicating",
+    "lastRead": "2/22/2026",
+    "consumption": 456
+  },
+  {
+    "meterId": "MTR-000015",
+    "location": "Location 2, Building 5",
+    "status": "Communicating",
+    "lastRead": "2/28/2026",
+    "consumption": 789
+  },
+  {
+    "meterId": "MTR-000016",
+    "location": "Location 2, Building 6",
+    "status": "Non Communicating",
+    "lastRead": "2/27/2026",
+    "consumption": 234
+  },
+  {
+    "meterId": "MTR-000017",
+    "location": "Location 2, Building 7",
+    "status": "Communicating",
+    "lastRead": "2/26/2026",
+    "consumption": 567
+  },
+  {
+    "meterId": "MTR-000018",
+    "location": "Location 2, Building 8",
+    "status": "Communicating",
+    "lastRead": "2/25/2026",
+    "consumption": 890
+  },
+  {
+    "meterId": "MTR-000019",
+    "location": "Location 2, Building 9",
+    "status": "Communicating",
+    "lastRead": "2/24/2026",
+    "consumption": 123
+  },
+  {
+    "meterId": "MTR-000020",
+    "location": "Location 2, Building 10",
+    "status": "Communicating",
+    "lastRead": "2/23/2026",
+    "consumption": 456
+  }
+]
+
