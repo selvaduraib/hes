@@ -106,6 +106,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onToggle }) =
             {isOpen && <span className="nav-item-label" style={{ fontSize: 15, fontWeight: 500 }}>Settings</span>}
           </div>
         </NavLink>
+
+        <button
+          className="nav-collapse-btn"
+          onClick={onToggle}
+          aria-label={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+          title={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+        >
+          {isOpen ? <Icons.PanelLeftClose size={14} /> : <Icons.PanelLeftOpen size={14} />}
+          {isOpen && <span>Collapse</span>}
+        </button>
       </aside>
     </>
   );

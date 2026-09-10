@@ -10,12 +10,6 @@
     ]
   },
   {
-    "id": "asset-master-data",
-    "label": "Asset & Master Data",
-    "icon": "Database",
-    "path": "/asset-master-data"
-  },
-  {
     "id": "meter-data-section",
     "label": "METER DATA",
     "type": "section",
@@ -35,7 +29,8 @@
       { "id": "device-operations", "label": "Device Operations", "icon": "MonitorSmartphone", "path": "/device-operations" },
       { "id": "communication-health", "label": "Communication Health", "icon": "RadioTower", "path": "/communication-health" },
       { "id": "network-operations", "label": "Network Operations", "icon": "Network", "path": "/network-operations" },
-      { "id": "utility-structure", "label": "Utility Structure", "icon": "Building2", "path": "/utility-structure" }
+      { "id": "utility-structure", "label": "Utility Structure", "icon": "Building2", "path": "/utility-structure" },
+      { "id": "asset-master-data", "label": "Asset & Master Data", "icon": "Database", "path": "/asset-master-data" }
     ]
   },
   {
@@ -67,7 +62,11 @@
     "label": "FIELD OPERATIONS",
     "type": "section",
     "children": [
-      { "id": "survey-installation", "label": "Survey & Installation", "icon": "MapPinned", "path": "/survey-installation" }
+      { "id": "survey-installation", "label": "Survey & Installation", "icon": "MapPinned", "path": "/survey-installation" },
+      { "id": "meter-replacement", "label": "Meter Replacement", "icon": "ArrowRightLeft", "path": "/meter-replacement" },
+      { "id": "work-management", "label": "Work Management", "icon": "BriefcaseBusiness", "path": "/work-management" },
+      { "id": "complaints-cases", "label": "Complaints & Cases", "icon": "MessageSquareText", "path": "/complaints-cases" },
+      { "id": "inventory-returns", "label": "Inventory & Returns", "icon": "PackageOpen", "path": "/inventory-returns" }
     ]
   },
   {
@@ -75,10 +74,13 @@
     "label": "DATA & PLATFORM",
     "type": "section",
     "children": [
-      { "id": "data-integration", "label": "Data Integration", "icon": "GitBranch", "path": "/data-integration" },
-      { "id": "data-dictionary", "label": "Data Dictionary", "icon": "BookOpenText", "path": "/data-dictionary" },
-      { "id": "api-platform", "label": "API & Platform", "icon": "Waypoints", "path": "/api-platform" },
-      { "id": "mdm-services", "label": "MDM Services", "icon": "ServerCog", "path": "/mdm-services" }
+      { "id": "integration-hub", "label": "Integration Hub", "icon": "GitBranch", "path": "/integration-hub" },
+      { "id": "master-synchronization", "label": "Master Synchronization", "icon": "ServerCog", "path": "/master-synchronization" },
+      { "id": "data-exchange", "label": "Data Exchange", "icon": "Waypoints", "path": "/data-exchange" },
+      { "id": "interface-exceptions", "label": "Interface Exceptions", "icon": "AlertTriangle", "path": "/interface-exceptions" },
+      { "id": "system-operations", "label": "System Operations", "icon": "ServerCog", "path": "/system-operations" },
+      { "id": "sla-service-health", "label": "SLA & Service Health", "icon": "ShieldCheck", "path": "/sla-service-health" },
+      { "id": "reports-center", "label": "Reports Center", "icon": "FileText", "path": "/reports-center" }
     ]
   },
   {
@@ -86,9 +88,10 @@
     "label": "ADMINISTRATION",
     "type": "section",
     "children": [
-      { "id": "user-access", "label": "User Roles & Access", "icon": "UsersRound", "path": "/user-access" },
-      { "id": "security-audit", "label": "Security & Audit", "icon": "Shield", "path": "/security-audit" },
-      { "id": "tenant-config", "label": "Tenant & Configuration", "icon": "Settings2", "path": "/tenant-config" }
+      { "id": "configuration", "label": "Configuration", "icon": "Settings2", "path": "/configuration" },
+      { "id": "security-roles", "label": "Security & Roles", "icon": "Shield", "path": "/security-roles" },
+      { "id": "audit", "label": "Audit", "icon": "FileSearch", "path": "/audit" },
+      { "id": "data-lifecycle", "label": "Data Lifecycle", "icon": "RefreshCw", "path": "/data-lifecycle" }
     ]
   }
 ]
