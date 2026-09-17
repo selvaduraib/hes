@@ -1,120 +1,114 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ChevronDown, ChevronRight } from 'lucide-react';
-import { MenuItem } from '@/types/metadata';
 import * as Icons from 'lucide-react';
 import sidebarData from '@/data/sidebar.json';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  onToggle: () => void;
 }
 
-const SidebarItem: React.FC<{ item: MenuItem; level?: number; isCollapsed?: boolean }> = ({
-  item,
-  level = 0,
-  isCollapsed = false
-}) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const hasChildren = item.children && item.children.length > 0;
+const getIcon = (iconName?: string) => {
+  if (!iconName) {
+    return null;
+  }
 
-  // Get icon component dynamically
-  const IconComponent = item.icon ? (Icons as any)[item.icon] : null;
-
-  const handleClick = () => {
-    if (hasChildren) {
-      setIsExpanded(!isExpanded);
-    }
-  };
-
-  const itemContent = (
-    <div
-      className={`flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors ${
-        level > 0 ? 'pl-' + (4 + level * 4) : ''
-      }`}
-      onClick={handleClick}
-      title={isCollapsed ? item.label : ''}
-    >
-      <div className="flex items-center gap-3">
-        {IconComponent && <IconComponent className="w-5 h-5 flex-shrink-0" />}
-        {!isCollapsed && (
-          <>
-            <span className="text-sm font-medium">{item.label}</span>
-            {item.badge && (
-              <span className="px-2 py-0.5 text-xs bg-blue-600 text-white rounded-full">
-                {item.badge}
-              </span>
-            )}
-          </>
-        )}
-      </div>
-      {hasChildren && !isCollapsed && (
-        <span className="text-gray-400">
-          {isExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
-        </span>
-      )}
-    </div>
-  );
-
-  return (
-    <div>
-      {item.path && !hasChildren ? (
-        <NavLink
-          to={item.path}
-          className={({ isActive }) =>
-            `block ${
-              isActive
-                ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border-r-4 border-blue-600'
-                : 'text-gray-700 dark:text-gray-300'
-            }`
-          }
-        >
-          {itemContent}
-        </NavLink>
-      ) : (
-        <div className="text-gray-700 dark:text-gray-300">{itemContent}</div>
-      )}
-
-      {/* Render children */}
-      {hasChildren && isExpanded && !isCollapsed && (
-        <div className="bg-gray-50 dark:bg-gray-800/50">
-          {item.children!.map((child) => (
-            <SidebarItem key={child.id} item={child} level={level + 1} isCollapsed={isCollapsed} />
-          ))}
-        </div>
-      )}
-    </div>
-  );
+  const Icon = (Icons as Record<string, any>)[iconName];
+  return Icon ? <Icon size={19} /> : null;
 };
 
-export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
-  const menuItems = sidebarData as MenuItem[];
-
+export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onToggle }) => {
   return (
     <>
-      {/* Mobile Overlay - only show on mobile when sidebar is open */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-          onClick={onClose}
-        />
-      )}
+      {isOpen && <div className="fixed inset-0 bg-black/20 z-30 lg:hidden" onClick={onClose} />}
 
-      {/* Sidebar */}
-      <aside
-        className={`fixed top-16 left-0 bottom-0 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 z-40 transition-all duration-300 ${
-          isOpen
-            ? 'w-64 translate-x-0'
-            : 'w-20 -translate-x-full lg:translate-x-0'
-        }`}
-      >
-        <nav className="h-full overflow-y-auto py-4">
-          {menuItems.map((item) => (
-            <SidebarItem key={item.id} item={item} isCollapsed={!isOpen} />
-          ))}
+      <aside className={`app-nav ${isOpen ? '' : 'nav-collapsed'}`}>
+        
+
+        <nav>
+          {sidebarData.map((section: any) => {
+            if (!section.children) {
+              return (
+                <NavLink
+                  key={section.id}
+                  to={section.path || '#'}
+                  className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+                  style={{
+                    padding: '10px 12px 10px 10px',
+                    marginBottom: '6px',
+                    borderRadius: '10px',
+                    minHeight: '40px',
+                  }}
+                >
+                  <div className="nav-item-main" style={{ gap: 12 }}>
+                    <div className="nav-ic-box" style={{ width: 26, height: 26, borderRadius: 8 }}>
+                      {getIcon(section.icon)}
+                    </div>
+                    {isOpen && <span className="nav-item-label" style={{ fontSize: 15, fontWeight: 500 }}>{section.label}</span>}
+                  </div>
+                </NavLink>
+              );
+            }
+
+            return (
+              <div key={section.id} className="nav-group">
+                {section.label && section.id !== 'home-section' && (
+                  <div className="nav-group-label" style={{ marginBottom: 8 }}>
+                    {section.label}
+                  </div>
+                )}
+
+                {section.children?.map((item: any) => (
+                  <NavLink
+                    key={item.id}
+                    to={item.path || '#'}
+                    className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+                    style={{
+                      padding: '10px 12px 10px 10px',
+                      marginBottom: '6px',
+                      borderRadius: '10px',
+                      minHeight: '40px',
+                    }}
+                  >
+                    <div className="nav-item-main" style={{ gap: 12 }}>
+                      <div className="nav-ic-box" style={{ width: 26, height: 26, borderRadius: 8 }}>
+                        {getIcon(item.icon)}
+                      </div>
+                      {isOpen && <span className="nav-item-label" style={{ fontSize: 15, fontWeight: 500 }}>{item.label}</span>}
+                    </div>
+                  </NavLink>
+                ))}
+              </div>
+            );
+          })}
         </nav>
+
+        <NavLink
+          to="/settings"
+          className={({ isActive }) => `nav-footer-item ${isActive ? 'active' : ''}`}
+          style={{ marginTop: 'auto' }}
+        >
+          <div className="nav-item-main" style={{ gap: 12 }}>
+            <div className="nav-ic-box" style={{ width: 26, height: 26, borderRadius: 8 }}>
+              <Icons.Settings size={18} />
+            </div>
+            {isOpen && <span className="nav-item-label" style={{ fontSize: 15, fontWeight: 500 }}>Settings</span>}
+          </div>
+        </NavLink>
+
+        <button
+          className="nav-collapse-btn"
+          onClick={onToggle}
+          aria-label={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+          title={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+        >
+          {isOpen ? <Icons.PanelLeftClose size={14} /> : <Icons.PanelLeftOpen size={14} />}
+          {isOpen && <span>Collapse</span>}
+        </button>
       </aside>
     </>
   );
 };
+
 

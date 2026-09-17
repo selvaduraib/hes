@@ -1,61 +1,98 @@
 [
   {
-    "id": "dashboard",
-    "label": "Dashboard",
-    "icon": "LayoutDashboard",
-    "path": "/"
-  },
-  {
-    "id": "communication",
-    "label": "Communication",
-    "icon": "Radio",
+    "id": "home-section",
+    "label": "HOME",
+    "type": "section",
     "children": [
-      {
-        "id": "overview",
-        "label": "Overview",
-        "path": "/communication/overview"
-      },
-      {
-        "id": "history",
-        "label": "History",
-        "path": "/communication/history"
-      }
+      { "id": "home", "label": "My Home", "icon": "House", "path": "/" },
+      { "id": "command-center", "label": "Command Center", "icon": "Activity", "path": "/command-center" },
+      { "id": "my-work", "label": "My Work", "icon": "ClipboardList", "path": "/my-work" }
     ]
   },
   {
-    "id": "meters",
-    "label": "Meters",
-    "icon": "Gauge",
+    "id": "meter-data-section",
+    "label": "METER DATA",
+    "type": "section",
     "children": [
-      {
-        "id": "all-meters",
-        "label": "All Meters",
-        "path": "/meters/all"
-      },
-      {
-        "id": "locate",
-        "label": "Locate Meters",
-        "path": "/meters/locate"
-      }
+      { "id": "meter-data-operations", "label": "Meter Data Operations", "icon": "BarChart3", "path": "/meter-data-operations" },
+      { "id": "vee-data-quality", "label": "VEE & Data Quality", "icon": "ShieldCheck", "path": "/vee-data-quality" },
+      { "id": "billing-readiness", "label": "Billing Readiness", "icon": "FileCheck2", "path": "/billing-readiness" },
+      { "id": "events-alarms", "label": "Events & Alarms", "icon": "BellRing", "path": "/events-alarms" },
+      { "id": "consumer-meter-360", "label": "Consumer / Meter 360", "icon": "Users", "path": "/consumer-meter-360" }
     ]
   },
   {
-    "id": "schedule-data",
-    "label": "Schedule Data",
-    "icon": "Calendar",
-    "path": "/schedule-data"
+    "id": "device-network-section",
+    "label": "DEVICE & NETWORK",
+    "type": "section",
+    "children": [
+      { "id": "device-operations", "label": "Device Operations", "icon": "MonitorSmartphone", "path": "/device-operations" },
+      { "id": "communication-health", "label": "Communication Health", "icon": "RadioTower", "path": "/communication-health" },
+      { "id": "network-operations", "label": "Network Operations", "icon": "Network", "path": "/network-operations" },
+      { "id": "utility-structure", "label": "Utility Structure", "icon": "Building2", "path": "/utility-structure" },
+      { "id": "asset-master-data", "label": "Asset & Master Data", "icon": "Database", "path": "/asset-master-data" }
+    ]
   },
   {
-    "id": "reports",
-    "label": "Reports",
-    "icon": "FileText",
-    "path": "/reports"
+    "id": "insights-analytics-section",
+    "label": "INSIGHTS & ANALYTICS",
+    "type": "section",
+    "children": [
+      { "id": "meter-data-ops", "label": "Meter Data & Ops Analytics", "icon": "BarChart3", "path": "/meter-data-ops" },
+      { "id": "energy-audit-loss", "label": "Energy Audit & Loss", "icon": "Zap", "path": "/energy-audit-loss" },
+      { "id": "asset-reliability", "label": "Asset & Reliability", "icon": "ShieldCheck", "path": "/asset-reliability" },
+      { "id": "load-management", "label": "Load Management", "icon": "TrendingUp", "path": "/load-management" },
+      { "id": "power-quality", "label": "Power Quality", "icon": "Activity", "path": "/power-quality" },
+      { "id": "revenue-protection", "label": "Revenue Protection", "icon": "Shield", "path": "/revenue-protection" },
+      { "id": "load-forecasting", "label": "Load Forecasting", "icon": "TrendingDown", "path": "/load-forecasting" }
+    ]
   },
   {
-    "id": "settings",
-    "label": "Settings",
-    "icon": "Settings",
-    "path": "/settings"
+    "id": "commercial-section",
+    "label": "COMMERCIAL",
+    "type": "section",
+    "children": [
+      { "id": "billing-intelligence", "label": "Billing Intelligence", "icon": "BarChartHorizontal", "path": "/billing-intelligence" },
+      { "id": "prepaid-operations", "label": "Prepaid Operations", "icon": "WalletCards", "path": "/prepaid-operations" },
+      { "id": "net-metering-der", "label": "Net Metering / DER", "icon": "SunMedium", "path": "/net-metering-der" }
+    ]
+  },
+  {
+    "id": "field-operations-section",
+    "label": "FIELD OPERATIONS",
+    "type": "section",
+    "children": [
+      { "id": "survey-installation", "label": "Survey & Installation", "icon": "MapPinned", "path": "/survey-installation" },
+      { "id": "meter-replacement", "label": "Meter Replacement", "icon": "ArrowRightLeft", "path": "/meter-replacement" },
+      { "id": "work-management", "label": "Work Management", "icon": "BriefcaseBusiness", "path": "/work-management" },
+      { "id": "complaints-cases", "label": "Complaints & Cases", "icon": "MessageSquareText", "path": "/complaints-cases" },
+      { "id": "inventory-returns", "label": "Inventory & Returns", "icon": "PackageOpen", "path": "/inventory-returns" }
+    ]
+  },
+  {
+    "id": "data-platform-section",
+    "label": "DATA & PLATFORM",
+    "type": "section",
+    "children": [
+      { "id": "integration-hub", "label": "Integration Hub", "icon": "GitBranch", "path": "/integration-hub" },
+      { "id": "master-synchronization", "label": "Master Synchronization", "icon": "ServerCog", "path": "/master-synchronization" },
+      { "id": "data-exchange", "label": "Data Exchange", "icon": "Waypoints", "path": "/data-exchange" },
+      { "id": "interface-exceptions", "label": "Interface Exceptions", "icon": "AlertTriangle", "path": "/interface-exceptions" },
+      { "id": "system-operations", "label": "System Operations", "icon": "ServerCog", "path": "/system-operations" },
+      { "id": "sla-service-health", "label": "SLA & Service Health", "icon": "ShieldCheck", "path": "/sla-service-health" },
+      { "id": "reports-center", "label": "Reports Center", "icon": "FileText", "path": "/reports-center" }
+    ]
+  },
+  {
+    "id": "administration-section",
+    "label": "ADMINISTRATION",
+    "type": "section",
+    "children": [
+      { "id": "configuration", "label": "Configuration", "icon": "Settings2", "path": "/configuration" },
+      { "id": "security-roles", "label": "Security & Roles", "icon": "Shield", "path": "/security-roles" },
+      { "id": "audit", "label": "Audit", "icon": "FileSearch", "path": "/audit" },
+      { "id": "data-lifecycle", "label": "Data Lifecycle", "icon": "RefreshCw", "path": "/data-lifecycle" }
+    ]
   }
 ]
 
