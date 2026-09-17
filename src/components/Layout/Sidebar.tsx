@@ -21,12 +21,16 @@ const getIcon = (iconName?: string) => {
 export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onToggle }) => {
   return (
     <>
-      {isOpen && <div className="fixed inset-0 bg-black/20 z-30 lg:hidden" onClick={onClose} />}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 z-30 lg:hidden" 
+          onClick={onClose}
+          aria-hidden="true"
+        />
+      )}
 
-      <aside className={`app-nav ${isOpen ? '' : 'nav-collapsed'}`}>
-        
-
-        <nav>
+      <aside className={`app-nav ${!isOpen ? 'nav-collapsed' : ''}`}>
+        <nav style={{ flex: '1', display: 'flex', flexDirection: 'column', gap: '6px', overflow: 'auto' }}>
           {sidebarData.map((section: any) => {
             if (!section.children) {
               return (
@@ -34,18 +38,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onToggle }) =
                   key={section.id}
                   to={section.path || '#'}
                   className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
-                  style={{
-                    padding: '10px 12px 10px 10px',
-                    marginBottom: '6px',
-                    borderRadius: '10px',
-                    minHeight: '40px',
-                  }}
                 >
-                  <div className="nav-item-main" style={{ gap: 12 }}>
-                    <div className="nav-ic-box" style={{ width: 26, height: 26, borderRadius: 8 }}>
+                  <div className="nav-item-main">
+                    <div className="nav-ic-box">
                       {getIcon(section.icon)}
                     </div>
-                    {isOpen && <span className="nav-item-label" style={{ fontSize: 15, fontWeight: 500 }}>{section.label}</span>}
+                    {isOpen && <span className="nav-item-label">{section.label}</span>}
                   </div>
                 </NavLink>
               );
@@ -54,9 +52,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onToggle }) =
             return (
               <div key={section.id} className="nav-group">
                 {section.label && section.id !== 'home-section' && (
-                  <div className="nav-group-label" style={{ marginBottom: 8 }}>
-                    {section.label}
-                  </div>
+                  <div className="nav-group-label">{section.label}</div>
                 )}
 
                 {section.children?.map((item: any) => (
@@ -64,38 +60,32 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onToggle }) =
                     key={item.id}
                     to={item.path || '#'}
                     className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
-                    style={{
-                      padding: '10px 12px 10px 10px',
-                      marginBottom: '6px',
-                      borderRadius: '10px',
-                      minHeight: '40px',
-                    }}
                   >
-                    <div className="nav-item-main" style={{ gap: 12 }}>
-                      <div className="nav-ic-box" style={{ width: 26, height: 26, borderRadius: 8 }}>
+                    <div className="nav-item-main">
+                      <div className="nav-ic-box">
                         {getIcon(item.icon)}
                       </div>
-                      {isOpen && <span className="nav-item-label" style={{ fontSize: 15, fontWeight: 500 }}>{item.label}</span>}
+                      {isOpen && <span className="nav-item-label">{item.label}</span>}
                     </div>
                   </NavLink>
                 ))}
               </div>
             );
           })}
-        </nav>
 
-        <NavLink
-          to="/settings"
-          className={({ isActive }) => `nav-footer-item ${isActive ? 'active' : ''}`}
-          style={{ marginTop: 'auto' }}
-        >
-          <div className="nav-item-main" style={{ gap: 12 }}>
-            <div className="nav-ic-box" style={{ width: 26, height: 26, borderRadius: 8 }}>
-              <Icons.Settings size={18} />
+          <NavLink
+            to="/settings"
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+            style={{ marginTop: 'auto' }}
+          >
+            <div className="nav-item-main">
+              <div className="nav-ic-box">
+                <Icons.Settings size={18} />
+              </div>
+              {isOpen && <span className="nav-item-label">Settings</span>}
             </div>
-            {isOpen && <span className="nav-item-label" style={{ fontSize: 15, fontWeight: 500 }}>Settings</span>}
-          </div>
-        </NavLink>
+          </NavLink>
+        </nav>
 
         <button
           className="nav-collapse-btn"
@@ -103,7 +93,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onToggle }) =
           aria-label={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
           title={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
         >
-          {isOpen ? <Icons.PanelLeftClose size={14} /> : <Icons.PanelLeftOpen size={14} />}
+          {isOpen ? <Icons.ChevronsLeft size={16} /> : <Icons.ChevronsRight size={16} />}
           {isOpen && <span>Collapse</span>}
         </button>
       </aside>

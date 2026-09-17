@@ -713,9 +713,9 @@ button {
 }
 
 .nav-collapse-btn {
-  width: 100%;
+  width: calc(100% - 16px);
   min-height: 40px;
-  margin-top: auto;
+  margin: auto 8px auto 8px;
   border: 1px dashed var(--border-strong);
   border-radius: 10px;
   background: transparent;
