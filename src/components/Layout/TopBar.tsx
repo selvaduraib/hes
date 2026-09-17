@@ -1,14 +1,15 @@
 import React from 'react';
-import { Menu, Moon, Sun, Globe, Bell } from 'lucide-react';
+import { PanelLeftClose, PanelLeftOpen, Moon, Sun, Globe, Bell } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import topBarData from '@/data/topBar.json';
 
 interface TopBarProps {
   onMenuClick: () => void;
+  isSidebarOpen?: boolean;
 }
 
-export const TopBar: React.FC<TopBarProps> = ({ onMenuClick }) => {
+export const TopBar: React.FC<TopBarProps> = ({ onMenuClick, isSidebarOpen = true }) => {
   const { theme, toggleTheme } = useTheme();
   const { i18n, t } = useTranslation();
 
@@ -18,65 +19,76 @@ export const TopBar: React.FC<TopBarProps> = ({ onMenuClick }) => {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 h-16 fixed top-0 left-0 right-0 z-50">
-      <div className="h-full px-4 flex items-center justify-between">
-        {/* Left Section */}
-        <div className="flex items-center gap-4">
-          <button
-            onClick={onMenuClick}
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
-            title={t('common.toggleMenu')}
-          >
-            <Menu className="w-5 h-5" />
-          </button>
-
-          <div className="flex items-center gap-3">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: topBarData.logo.backgroundColor }}
-            >
-              <span className="text-white font-bold text-sm">{topBarData.logo.text}</span>
-            </div>
-            <h1 className="text-lg font-semibold text-gray-900 dark:text-white hidden sm:block">
-              {topBarData.appName}
-            </h1>
-          </div>
+    <header className="app-header">
+      <div className="brand">
+        <div className="brand-mark">
+          {topBarData.logo.text}
+        </div>
+        
+        <div className="brand-text">
+          <div className="brand-title">{topBarData.appName}</div>
+          <div className="brand-sub">{topBarData.subtitle}</div>
         </div>
 
-        {/* Right Section */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={toggleLanguage}
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
-            aria-label="Toggle language"
-          >
-            <Globe className="w-5 h-5" />
-          </button>
+        <button
+          onClick={onMenuClick}
+          className="sidebar-toggle-btn"
+          aria-label="Toggle sidebar"
+          style={{ marginLeft: 'auto' }}
+        >
+          {isSidebarOpen ? (
+            <PanelLeftClose className="w-5 h-5" />
+          ) : (
+            <PanelLeftOpen className="w-5 h-5" />
+          )}
+        </button>
+      </div>
 
-          <button
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-          </button>
+      <div className="header-search">
+        <input 
+          type="text" 
+          placeholder="Search meters, assets, or reports"
+          aria-label="Search"
+        />
+        <svg className="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" strokeWidth="1.5"/>
+          <path d="m10.5 10.5 3.5 3.5" stroke="currentColor" strokeWidth="1.5"/>
+        </svg>
+      </div>
 
-          <button
-            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors relative"
-            aria-label="Notifications"
-          >
-            <Bell className="w-5 h-5" />
-            <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-          </button>
+      <div className="header-actions">
+        <button
+          className="icon-btn"
+          onClick={toggleLanguage}
+          aria-label="Toggle language"
+          title={t('common.toggleLanguage') || 'Toggle language'}
+        >
+          <Globe className="w-5 h-5" />
+        </button>
 
-          <div className="flex items-center gap-2 ml-2 pl-2 border-l border-gray-200 dark:border-gray-700">
-            <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center">
-              <span className="text-white text-xs font-bold">{topBarData.user.name.substring(0, 2)}</span>
-            </div>
-            <div className="hidden sm:block">
-              <p className="text-sm font-medium text-gray-900 dark:text-white">{topBarData.user.name}</p>
-              <p className="text-xs text-gray-600 dark:text-gray-400">{topBarData.user.role}</p>
-            </div>
+        <button
+          className="icon-btn"
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+          title={t('common.toggleTheme') || 'Toggle theme'}
+        >
+          {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+        </button>
+
+        <button
+          className="icon-btn"
+          aria-label="Notifications"
+          title="Notifications"
+        >
+          <Bell className="w-5 h-5" />
+          <span className="badge-dot">4</span>
+        </button>
+
+        <div className="user-chip">
+          <div className="avatar">{topBarData.user.name.substring(0, 2).toUpperCase()}</div>
+          <div className="user-meta">
+            <span className="user-name">{topBarData.user.name}</span>
+            <span className="user-role">{topBarData.user.role}</span>
           </div>
         </div>
       </div>
