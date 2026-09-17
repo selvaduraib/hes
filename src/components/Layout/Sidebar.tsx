@@ -24,17 +24,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, onToggle }) =
       {isOpen && <div className="fixed inset-0 bg-black/20 z-30 lg:hidden" onClick={onClose} />}
 
       <aside className={`app-nav ${isOpen ? '' : 'nav-collapsed'}`}>
-        <div className="nav-header">
-          {isOpen && <span className="nav-group-label">HOME</span>}
-          <button
-            className="nav-collapse-trigger"
-            onClick={onToggle}
-            aria-label={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
-            title={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
-          >
-            {isOpen ? <Icons.PanelLeftClose size={14} /> : <Icons.PanelLeftOpen size={14} />}
-          </button>
-        </div>
+        
 
         <nav>
           {sidebarData.map((section: any) => {

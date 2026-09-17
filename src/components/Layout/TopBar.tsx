@@ -1,14 +1,16 @@
 import React from 'react';
 import { Bell, Globe, Moon, Search, Sun } from 'lucide-react';
+import * as Icons from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import topBarData from '@/data/topBar.json';
 
 interface TopBarProps {
   onMenuClick: () => void;
+  isOpen: boolean;
 }
 
-export const TopBar: React.FC<TopBarProps> = () => {
+export const TopBar: React.FC<TopBarProps> = ({ onMenuClick, isOpen }) => {
   const { theme, toggleTheme } = useTheme();
   const { i18n } = useTranslation();
 
@@ -18,6 +20,7 @@ export const TopBar: React.FC<TopBarProps> = () => {
 
   return (
     <header className="app-header">
+
       <div className="brand">
         <div className="brand-mark">H</div>
 
@@ -26,7 +29,15 @@ export const TopBar: React.FC<TopBarProps> = () => {
           <div className="brand-sub">Metadata driven operations</div>
         </div>
 
-        {/* <span className="workspace-chip">Enterprise</span> */}
+    <button
+          className="sidebar-toggle-btn nav-collapse-trigger"
+          onClick={onMenuClick}
+          aria-label={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+          title={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
+        >
+          {isOpen ? <Icons.PanelLeftClose size={16} /> : <Icons.PanelLeftOpen size={16} />}
+        </button>
+        
       </div>
 
       <div className="header-search">

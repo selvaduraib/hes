@@ -125,7 +125,7 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-width: 210px;
+  min-width: 160px;
 }
 
 .sidebar-toggle-btn {
@@ -136,6 +136,7 @@ button {
   color: var(--text-secondary);
   border-radius: 9px;
   display: flex;
+  margin-left: 8px;
   align-items: center;
   justify-content: center;
   transition: background var(--transition), color var(--transition);
@@ -615,6 +616,34 @@ button {
 
   .grid-2 {
     grid-template-columns: 1fr;
+  }
+  /* Top bar responsive adjustments */
+  .sidebar-toggle-btn {
+    display: flex;
+    margin-right: 8px;
+  }
+
+  .brand {
+    min-width: auto;
+    gap: 8px;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .header-search {
+    display: none;
+  }
+
+  .user-meta {
+    display: none;
+  }
+
+  .header-actions {
+    min-width: auto;
+    gap: 6px;
+    padding-left: 8px;
   }
 }
 

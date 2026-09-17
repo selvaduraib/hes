@@ -8,7 +8,7 @@ export const MainLayout: React.FC = () => {
 
   return (
     <div className={`app-shell ${sidebarOpen ? '' : 'nav-collapsed'}`}>
-      <TopBar onMenuClick={() => setSidebarOpen((prev) => !prev)} />
+      <TopBar isOpen={sidebarOpen} onMenuClick={() => setSidebarOpen((prev) => !prev)} />
       <Sidebar
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
