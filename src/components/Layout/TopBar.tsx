@@ -1,73 +1,82 @@
 import React from 'react';
-import { Bell, Globe, Moon, Search, Sun } from 'lucide-react';
-import * as Icons from 'lucide-react';
+import { Menu, Moon, Sun, Globe, Bell } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import topBarData from '@/data/topBar.json';
 
 interface TopBarProps {
   onMenuClick: () => void;
-  isOpen: boolean;
 }
 
-export const TopBar: React.FC<TopBarProps> = ({ onMenuClick, isOpen }) => {
+export const TopBar: React.FC<TopBarProps> = ({ onMenuClick }) => {
   const { theme, toggleTheme } = useTheme();
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en');
+    const newLang = i18n.language === 'en' ? 'es' : 'en';
+    i18n.changeLanguage(newLang);
   };
 
   return (
-    <header className="app-header">
+    <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 h-16 fixed top-0 left-0 right-0 z-50">
+      <div className="h-full px-4 flex items-center justify-between">
+        {/* Left Section */}
+        <div className="flex items-center gap-4">
+          <button
+            onClick={onMenuClick}
+            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+            title={t('common.toggleMenu')}
+          >
+            <Menu className="w-5 h-5" />
+          </button>
 
-      <div className="brand">
-        <div className="brand-mark">H</div>
-
-        <div className="brand-text">
-          <div className="brand-title">{topBarData.appName}</div>
-          <div className="brand-sub">Metadata driven operations</div>
+          <div className="flex items-center gap-3">
+            <div
+              className="w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: topBarData.logo.backgroundColor }}
+            >
+              <span className="text-white font-bold text-sm">{topBarData.logo.text}</span>
+            </div>
+            <h1 className="text-lg font-semibold text-gray-900 dark:text-white hidden sm:block">
+              {topBarData.appName}
+            </h1>
+          </div>
         </div>
 
-    <button
-          className="sidebar-toggle-btn nav-collapse-trigger"
-          onClick={onMenuClick}
-          aria-label={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
-          title={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
-        >
-          {isOpen ? <Icons.PanelLeftClose size={16} /> : <Icons.PanelLeftOpen size={16} />}
-        </button>
-        
-      </div>
+        {/* Right Section */}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={toggleLanguage}
+            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+            aria-label="Toggle language"
+          >
+            <Globe className="w-5 h-5" />
+          </button>
 
-      <div className="header-search">
-        <Search size={15} className="search-icon" />
-        <input type="text" placeholder="Search meters, assets, or reports" />
-      </div>
+          <button
+            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+          </button>
 
-      <div className="header-actions">
-        <button className="icon-btn" onClick={toggleLanguage} aria-label="Toggle language">
-          <Globe size={16} />
-        </button>
+          <button
+            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors relative"
+            aria-label="Notifications"
+          >
+            <Bell className="w-5 h-5" />
+            <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+          </button>
 
-        <button
-          className={`icon-btn ${theme === 'dark' ? 'active' : ''}`}
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-        >
-          {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
-        </button>
-
-        <button className="icon-btn" aria-label="Notifications">
-          <Bell size={16} />
-          <span className="badge-dot">4</span>
-        </button>
-
-        <div className="user-chip" aria-label="User profile">
-          <div className="avatar">AR</div>
-          <div className="user-meta">
-            <span className="user-name">{topBarData.user.name}</span>
-            <span className="user-role">{topBarData.user.role}</span>
+          <div className="flex items-center gap-2 ml-2 pl-2 border-l border-gray-200 dark:border-gray-700">
+            <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center">
+              <span className="text-white text-xs font-bold">{topBarData.user.name.substring(0, 2)}</span>
+            </div>
+            <div className="hidden sm:block">
+              <p className="text-sm font-medium text-gray-900 dark:text-white">{topBarData.user.name}</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">{topBarData.user.role}</p>
+            </div>
           </div>
         </div>
       </div>

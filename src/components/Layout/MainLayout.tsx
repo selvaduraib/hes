@@ -7,16 +7,17 @@ export const MainLayout: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <div className={`app-shell ${sidebarOpen ? '' : 'nav-collapsed'}`}>
-      <TopBar isOpen={sidebarOpen} onMenuClick={() => setSidebarOpen((prev) => !prev)} />
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <TopBar
+        onMenuClick={() => setSidebarOpen(!sidebarOpen)}
+      />
       <Sidebar
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
-        onToggle={() => setSidebarOpen((prev) => !prev)}
       />
 
-      <main className="app-main">
-        <div id="main-scroll">
+      <main className={`pt-16 transition-all duration-300 ${sidebarOpen ? 'lg:pl-64' : 'lg:pl-20'}`}>
+        <div className="p-6">
           <Outlet />
         </div>
       </main>
