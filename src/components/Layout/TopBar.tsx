@@ -27,7 +27,6 @@ export const TopBar: React.FC<TopBarProps> = ({ onMenuClick, isSidebarOpen = tru
         
         <div className="brand-text">
           <div className="brand-title">{topBarData.appName}</div>
-          <div className="brand-sub">{topBarData.subtitle}</div>
         </div>
 
         <button
